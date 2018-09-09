@@ -7,3 +7,7 @@ TechExApp.egg-info/SOURCES.txt
 TechExApp.egg-info/dependency_links.txt
 TechExApp.egg-info/requires.txt
 TechExApp.egg-info/top_level.txt
+TechExApp/static/style.css
+TechExApp/templates/layout.html
+TechExApp/templates/login.html
+TechExApp/templates/show_entries.html
