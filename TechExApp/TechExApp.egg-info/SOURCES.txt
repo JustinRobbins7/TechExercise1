@@ -1,0 +1,9 @@
+MANIFEST.in
+TechExApp/TechExApp.py
+TechExApp/__init__.py
+TechExApp/schema.sql
+TechExApp.egg-info/PKG-INFO
+TechExApp.egg-info/SOURCES.txt
+TechExApp.egg-info/dependency_links.txt
+TechExApp.egg-info/requires.txt
+TechExApp.egg-info/top_level.txt
