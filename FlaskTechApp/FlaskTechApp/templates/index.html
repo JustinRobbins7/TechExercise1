@@ -38,8 +38,16 @@
 		<h2>Recorded Events</h2>
 		<br>
 		<div class="event_display_box">
-			Hi
+			{% for item in events %}
+			<p>
+			{{item[0]}} <br>
+			{{item[1]}} <br>
+			{{item[2]}} <br>
+			{{item[3]}} <br>
+			</p>
+			{% endfor %}
 		</div>
+		<input type="button" value="Refresh List" onClick="window.location.reload()">
 	</div>	
  
     <div class="event_entry">
