@@ -7,8 +7,8 @@ app = Flask(__name__)
 mysql = MySQL()
 
 app.config['TEMPLATES_AUTO_RELOAD'] = True
-app.config['MYSQL_DATABASE_USER'] = 'justinrobbins'
-app.config['MYSQL_DATABASE_PASSWORD'] = 'Jayman77'
+app.config['MYSQL_DATABASE_USER'] = 'dev'
+app.config['MYSQL_DATABASE_PASSWORD'] = 'TechEx1'
 app.config['MYSQL_DATABASE_DB'] = 'FlaskTechApp'
 app.config['MYSQL_DATABASE_HOST'] = 'localhost'
 mysql.init_app(app)
