@@ -1,0 +1,19 @@
+.event_display{
+	float:left;
+	width: 40%;
+	height: 70%;
+}
+
+.event_display_box{
+	overflow: scroll;
+	border-style: solid;
+}
+
+.event_entry{
+	float:right;
+}
+
+#btnEnterEvent{
+	width: 20px;
+	height:40px;
+}
