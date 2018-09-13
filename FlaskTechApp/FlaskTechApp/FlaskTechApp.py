@@ -18,8 +18,8 @@ def main():
     return ReloadData()
 
 @app.route("/",methods=['POST'])
-def handleInput():
-    
+def handleInput():        
+    print('Entering Event!')        
     _event_name = request.form['inputEvent']
     _event_loc = request.form['inputLoc']
     _event_desc = request.form['inputDesc']
@@ -32,6 +32,12 @@ def handleInput():
         return EnterIntoDB((_event_name, _event_loc, _event_date, _event_desc))
     else:
         return json.dumps({'html':'<span>Enter the required fields</span>'})
+
+@app.route('/handledeletion', methods=['POST'])
+def handledeletion():
+    print('PING!')
+    TruncateData()
+    return ReloadData()
 
 def EnterIntoDB(argtuple):
     conn = mysql.connect()
@@ -55,11 +61,15 @@ def ReloadData():
     conn.close()
     return render_template('index.html', events = events)  
 
-if __name__ == "__main__":
+def TruncateData():
     conn = mysql.connect()
     cursor = conn.cursor()
     cursor.execute('TRUNCATE TABLE events')
     events = cursor.fetchall()
     conn.commit()
     conn.close()
+    return;
+
+if __name__ == "__main__":
     app.run(host='0.0.0.0', port='8080')
+    TruncateData()

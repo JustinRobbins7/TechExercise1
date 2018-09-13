@@ -48,6 +48,9 @@
 			{% endfor %}
 		</div>
 		<input type="button" value="Refresh List" onClick="window.location.reload()">
+		<form action="{{url_for('handledeletion')}}" method="post">
+		<input type="submit" name="ResetList" value="Reset">
+		</form>
 	</div>	
  
     <div class="event_entry">

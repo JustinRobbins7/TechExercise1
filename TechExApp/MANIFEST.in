@@ -1,3 +1,0 @@
-graft TechExApp/templates
-graft TechExApp/static
-include TechExApp/schema.sql
