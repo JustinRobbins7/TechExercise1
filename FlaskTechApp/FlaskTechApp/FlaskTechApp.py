@@ -17,9 +17,8 @@ mysql.init_app(app)
 def main():
     return ReloadData()
 
-@app.route("/",methods=['POST'])
-def handleInput():        
-    print('Entering Event!')        
+@app.route("/handleentry",methods=['POST'])
+def handleentry():        
     _event_name = request.form['inputEvent']
     _event_loc = request.form['inputLoc']
     _event_desc = request.form['inputDesc']
@@ -29,9 +28,9 @@ def handleInput():
     _event_date = datetime.strftime(_html_date, "%Y-%m-%d %H:%M:%S")
     
     if _event_name and _event_loc and _event_desc and _html_date_input:
-        return EnterIntoDB((_event_name, _event_loc, _event_date, _event_desc))
-    else:
-        return json.dumps({'html':'<span>Enter the required fields</span>'})
+        EnterIntoDB((_event_name, _event_loc, _event_date, _event_desc))
+
+    return ReloadData()
 
 @app.route('/handledeletion', methods=['POST'])
 def handledeletion():
